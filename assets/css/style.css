@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg-color: #121214;
+    --text-color: #E1E1E6;
+    --title-color: #04D361;
+    --form-color: #A8A8A8;
+    --bg-button-color: #8257e5;
+    --input-expanded: 8vw;
+    --percent: 100%;
+}
+
+body * {
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+/* RIGHT SIDE */
+
+.container .backgroundImage {
+    width: 80vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    background-image: url(../img/read_news.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+/* LEFT SIDE */
+
+.container .left {
+    width: 50vw;
+    height: 100%;
+    padding: 50px 0px 0px 30px;
+    background-color: var(--body-bg-color);
+}
+
+.container .left > img {
+    width: 389px;
+    height: 94px;
+}
+
+.container .left .content {
+    padding: 0px 36px 0px 6px;
+}
+
+.container .left h1 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 28px;
+    color: var(--title-color);
+    margin-top: 92px;
+}
+
+.container .left h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 16px;
+    color: white;
+    margin: 8.56px 0px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.container .left p {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 19px;
+    color: white;
+    margin-bottom: 50px;
+    width: 85%;
+}
+
+/* FORM */
+.container .left form label:first-child{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: var(--form-color);
+}
+
+.container .left form .labelEmail {
+    cursor: text;
+    display: block;
+}
+
+.container .left form .empty::after {
+    content: "O email parece estar vazio :(";
+    filter: brightness(0.5);
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    animation: alertError 1s forwards linear;
+}
+
+.container .left form .email {
+    margin-top: 17px;
+    background-color: white;
+    padding: 14.5px 0px;
+    position: relative;
+    width: calc(36px + var(--input-expanded) + var(--percent));
+    border-left: 5px solid #04D361;
+}
+
+.container .left form .email input {
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 10px;
+    width: 80%;
+}
+
+.container .left form button {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--bg-button-color);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container .left .content p:last-child {
+    margin-top: 50px;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    gap: 5px;
+    color: var(--bg-button-color);
+}
+
+@keyframes alertError {
+    from {
+        transform: scale(0, 0);
+    }
+    to {
+        transform: scale(1, 1);
+    }
+}
